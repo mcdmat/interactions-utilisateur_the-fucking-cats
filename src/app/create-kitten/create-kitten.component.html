@@ -1,0 +1,61 @@
+<h3>Inscrire un nouveau chat</h3>
+<span>https://placekitten.com/200</span> --
+  <span>https://placekitten.com/201</span> --
+  <span>https://placekitten.com/202</span> --
+<form #myForm="ngForm" (ngSubmit)="myForm.valid && createKitten()">
+  <div class="form-group">
+    <label for="name">Nom</label>
+    <input
+      id="name"
+      name="name"
+      type="text"
+      class="form-control"
+      placeholder="Nom du chat"
+      required
+      [(ngModel)]="cat.name"
+      #name="ngModel"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="breed">Race</label>
+    <input
+      id="breed"
+      name="breed"
+      class="form-control"
+      placeholder="Race du chat"
+      required
+      [(ngModel)]="cat.breed"
+      #breed="ngModel"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="birthday">Date de naissance</label>
+    <input
+      id="birthday"
+      name="birthday"
+      type="date"
+      class="form-control"
+      placeholder="Date de naissance"
+      required
+      [(ngModel)]="cat.birthday"
+      #birthday="ngModel"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="img">Photo</label>
+    <input
+      id="img"
+      name="img"
+      type="text"
+      class="form-control"
+      placeholder="url de la photo"
+      required
+      [(ngModel)]="cat.photoUrl"
+      #photoUrl="ngModel"
+    />
+  </div>
+  <button [ngStyle]="{'background-color': myForm.valid ? 'green' : '' }" class="onsubmit">Soumettre</button>
+</form>

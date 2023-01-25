@@ -1,0 +1,29 @@
+<section class="list">
+  <h3>Mes chats</h3>
+<div *ngFor="let cat of myListKitten">
+  <div *ngIf="!cat.display">
+    <img
+      [src]="cat.photoUrl"
+      [title]="
+        'Nom: ' +
+        cat.name +
+        ' ' +
+        'Race: ' +
+        cat.breed +
+        ' ' +
+        'Date de naissance: ' +
+        cat.birthday
+      "
+    />
+    <button (click)="cat.display =!cat.display" class="onsubmit" type="submit">
+      Abandoner
+    </button>
+  </div>
+</div>
+</section>
+
+<app-list-kitten (sendCatToMyList)="implementMyListKitten($event)"   >
+  
+</app-list-kitten>
+
+<!-- (sendDisplayToMyList)="onDisplayToMyList($any($event)) -->

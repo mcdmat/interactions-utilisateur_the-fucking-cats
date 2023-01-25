@@ -1,0 +1,31 @@
+<section class="list">
+  <h3>Liste des chats à adopter</h3>
+
+  <ng-container *ngFor="let cat of listKitten">
+    
+    <div *ngIf="cat.display">
+      <button (click)="cat.display =!cat.display" class="onsubmit" type="submit">
+        Adopter
+      </button>
+      <img
+        [src]="cat.photoUrl"
+        [title]="
+          'Nom: ' +
+          cat.name +
+          ' ' +
+          'Race: ' +
+          cat.breed +
+          ' ' +
+          'Date de naissance: ' +
+          cat.birthday
+        "
+      />
+    </div>
+  </ng-container>
+</section>
+
+<section>
+  <app-create-kitten
+    (sendCatToCatList)="implementListKitten($any($event))"
+  ></app-create-kitten>
+</section>
