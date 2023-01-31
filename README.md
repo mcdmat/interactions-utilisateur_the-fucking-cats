@@ -1,3 +1,6 @@
+![My Video Gif](https://user-images.githubusercontent.com/105963515/215818480-18634f59-b0ae-43aa-83a3-5d81693f6bfc.gif)
+
+
 # InteractionsUtilisateur
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
